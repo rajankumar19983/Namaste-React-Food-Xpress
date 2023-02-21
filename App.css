@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hind";
+}
+
+.header {
+  background-color: white;
+  z-index: 100;
+  padding: 10px 20px;
+  box-shadow: 0 15px 40px -20px rgb(40, 44, 63);
+  position: fixed;
+  height: 85px;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header .header-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-items > ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-items > ul > li {
+  padding: 10px;
+}
+
+.nav-items > ul > #cart {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.card {
+  width: 250px;
+  padding: 20px;
+  margin: 10px;
+  min-height: 300px;
+  overflow-x: hidden;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  outline: 1px solid rgb(201, 199, 199);
+  box-shadow: 5px 5px 5px gray;
+}
+
+.card #rest-name {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.card #cuisines {
+  font-size: 12px;
+  color: gray;
+  line-height: 1;
+}
+
+.card #area {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.card div {
+  display: flex;
+  font-size: 12px;
+  color: gray;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card div #rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 5px;
+  background-color: rgb(0, 196, 0);
+  color: white;
+  width: 40px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.restaurant-list {
+  margin: 0 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 85px;
+  padding-top: 20px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  padding: 10px;
+}
