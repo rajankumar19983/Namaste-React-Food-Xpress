@@ -12,7 +12,7 @@ The ways to export these modules are named as `Named export` and `Default export
 
 A JavaScript file can export only one module by default `(only 1 Default export per file)` and as many Named export as you want. Given below are the different ways of exporting and importing these modules.
 
-- `Default export` :-
+### Default export :-
 
 This is a functional component and is exported as Default export
 
@@ -42,7 +42,7 @@ import xyz from "file-path-of-Component1";
 import Component1 from "file-path-of-Component1";
 ```
 
-- `Named export` :-
+### Named export :-
 
 Named exports are exported directly by using they keyword `export` before the module.
 A JavaScript file can have many Named exports.
