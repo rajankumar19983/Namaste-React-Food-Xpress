@@ -84,7 +84,7 @@ The Named and Default exports can be imported together as:-
 import Component4, { Component2, Component3 } from "file-path-of-Component2-3-4";
 ```
 
-- `* as` :-
+### \* as :-
 
 This is used for importing all exports as an onject using `import * as <obj>`.
 From the above example,
