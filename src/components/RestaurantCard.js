@@ -9,7 +9,18 @@ const RestaurantCard = ({ name, cuisines, area, cloudinaryImageId, costForTwoStr
       <p id="cuisines">{cuisines.join(", ")}</p>
       <p id="area">{area}</p>
       <div>
-        <p id="rating"><span id="span1">{avgRating}</span><span id="span2"><AiFillStar /></span></p>
+        <p
+          id="rating"
+          style={
+            avgRating >= 4
+              ? { backgroundColor: "green" }
+              : avgRating == '--'
+                ? { backgroundColor: "gray" }
+                : { backgroundColor: "orange" }
+          }>
+          <span id="span1">{avgRating}</span>
+          <span id="span2"><AiFillStar /></span>
+        </p>
         <span>•</span>
         <p>{lastMileTravelString}</p>
         <span>•</span>
