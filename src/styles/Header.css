@@ -1,0 +1,64 @@
+.header {
+  background-color: white;
+  z-index: 100;
+  padding: 10px 20px;
+  box-shadow: 0 15px 40px -20px rgb(40, 44, 63);
+  position: fixed;
+  height: 85px;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header .header-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-items > button {
+  max-height: 30px;
+  padding: 5px 15px;
+  width: 80px;
+  border: none;
+  font-size: 16px;
+}
+
+.nav-items > ul {
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-items > ul li {
+  padding: 10px;
+}
+
+.nav-items .link {
+  text-decoration: none;
+  color: rgb(40, 40, 40);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.nav-items > ul #cart {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.cart-icon {
+  width: 30px;
+}

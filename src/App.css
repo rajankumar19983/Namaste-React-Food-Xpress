@@ -7,104 +7,8 @@
   font-family: "Hind";
 }
 
-.header {
-  background-color: white;
-  z-index: 100;
-  padding: 10px 20px;
-  box-shadow: 0 15px 40px -20px rgb(40, 44, 63);
-  position: fixed;
-  height: 85px;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.header .header-elements {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-items > ul {
-  list-style-type: none;
-  display: flex;
-}
-
-.nav-items > ul > li {
-  padding: 10px;
-}
-
-.nav-items > ul > #cart {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo {
-  width: 100px;
-  height: auto;
-}
-
-.card {
-  width: 270px;
-  padding: 20px;
-  margin: 10px;
-  min-height: 300px;
-  overflow-x: hidden;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card:hover {
-  outline: 1px solid rgb(201, 199, 199);
-  box-shadow: 5px 5px 5px gray;
-}
-
-.card #rest-name {
-  font-size: 18px;
-  font-weight: 400;
-  margin-top: 20px;
-  line-height: 1;
-}
-
-.card #cuisines {
-  font-size: 12px;
-  color: gray;
-  line-height: 1;
-  margin-top: 10px;
-}
-
-.card #area {
-  font-size: 14px;
-  margin: 10px 0;
-}
-
-.card div {
-  display: flex;
-  font-size: 12px;
-  color: gray;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card div #rating {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  color: white;
-  width: 40px;
-  border-radius: 5px;
-}
-
-.card div #rating #span2 {
-  margin-top: 4px;
-}
-
-.card img {
-  width: 100%;
+:root {
+  --shimmer-color: rgb(230, 230, 230);
 }
 
 .body {
@@ -147,21 +51,21 @@
   min-height: 62.5vh;
 }
 
+.restaurant-list .link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .footer {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: gray;
   padding: 10px;
-  /* position: sticky;
-  bottom: 0;
+  position: sticky;
+  /*  bottom: 0;
   left: 0;
   right: 0; */
-}
-
-.shimmer-container {
-  margin: 170px 50px 50px;
-  padding: 20px;
 }
 
 .no-restaurant {
@@ -170,4 +74,20 @@
   padding: 20px;
   display: flex;
   justify-content: center;
+}
+
+.about-us,
+.contact-us-page,
+.error-component {
+  margin: 100px 50px 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  min-height: 70vh;
+}
+
+.error-component .hungry {
+  width: 200px;
+  margin: auto;
 }

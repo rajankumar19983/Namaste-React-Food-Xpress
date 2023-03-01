@@ -1,0 +1,70 @@
+.shimmer-restaurant-list {
+  margin: 170px 50px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  min-height: 62.5vh;
+}
+
+.shimmer-card {
+  color: var(--shimmer-color);
+  width: 270px;
+  padding: 20px;
+  margin: 10px;
+  height: 300px;
+  overflow-x: hidden;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--shimmer-color);
+}
+
+#shimmer-image {
+  width: 100%;
+  height: 145px;
+  background-color: var(--shimmer-color);
+  margin-bottom: 10px;
+}
+
+#shimmer-rest-name {
+  width: 75%;
+  height: 18px;
+  background-color: var(--shimmer-color);
+  margin-bottom: 10px;
+}
+
+#shimmer-cuisines {
+  height: 36px;
+  background-color: var(--shimmer-color);
+  margin-bottom: 10px;
+}
+
+#shimmer-area {
+  width: 50%;
+  height: 14px;
+  background-color: var(--shimmer-color);
+  margin-bottom: 10px;
+}
+
+#shimmer-last {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#shimmer-rating {
+  border-radius: 5px;
+  width: 20%;
+  background-color: var(--shimmer-color);
+}
+
+#shimmer-distance {
+  width: 15%;
+  background-color: var(--shimmer-color);
+}
+
+#shimmer-price {
+  width: 40%;
+  background-color: var(--shimmer-color);
+}

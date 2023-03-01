@@ -1,5 +1,6 @@
 import { IMG_CDN_URL } from "../constants";
 import { AiFillStar } from 'react-icons/Ai';
+import "../styles/RestaurantCard.css";
 
 const RestaurantCard = ({ name, cuisines, area, cloudinaryImageId, costForTwoString, lastMileTravelString, avgRating }) => {
   return (

@@ -3,6 +3,7 @@ import { restaurantList } from '../constants.js';
 import { useState, useEffect } from 'react';
 import ShimmerUI from './ShimmerUI.js';
 import NoRestaurant from './NoRestaurant';
+import { Link } from 'react-router-dom';
 
 
 function filterData(searchInput, restaurants) {
@@ -37,7 +38,9 @@ const Body = () => {
       <div className='search-container'>
         <input type="text" className='search-input' placeholder='Search...' value={searchInput} onChange={(e) => {
           setSearchInput(e.target.value);
-          const data = (e.target.value === '') ? allRestaurants : filterData(e.target.value, allRestaurants);
+          const data = (e.target.value === '')
+            ? allRestaurants
+            : filterData(e.target.value, allRestaurants);
           setFilteredRestaurants(data);
         }} />
         <button className='search-btn' onClick={() => {
@@ -50,7 +53,11 @@ const Body = () => {
         <div className="restaurant-list">
           {
             filteredRestaurants.map(restaurant => {
-              return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+              return (
+                <Link to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id} className="link">
+                  <RestaurantCard {...restaurant.data} />
+                </Link>
+              );
             })
           }
         </div>
