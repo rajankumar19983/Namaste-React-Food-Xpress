@@ -1,4 +1,4 @@
-# Chapter 07 - Lets Get Classy
+# Chapter 08 - Lets Get Classy
 
 ## -------------------- ASSIGNMENT --------------------
 

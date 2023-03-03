@@ -6,31 +6,20 @@ import "../styles/RestaurantMenu.css"
 import { AiFillStar } from "react-icons/Ai"
 import { CiDiscount1 } from "react-icons/Ci"
 import { TfiGift } from "react-icons/Tfi"
+import useRestaurant from "../customHooks/useRestaurant"
 
 const RestaurantMenu = () => {
+
+  // This fetched resId from the URL
   const { resId } = useParams()
 
-  const [restaurant, setRestaurant] = useState(null);
-
-
-  useEffect(() => {
-    getRestaurantInfo()
-  }, [])
-
-  async function getRestaurantInfo() {
-    const data = await fetch(
-      "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/v4/full?lat=28.50440286590411&lng=77.06517409533264&menuId=" +
-      resId
-    )
-    const json = await data.json()
-    setRestaurant(json?.data)
-  }
+  const restaurant = useRestaurant(resId);
 
   return !restaurant ? (
     <ShimmerUI />
   ) : (
     <div className="restaurant-menu">
-      {console.log(restaurant)}
+      {/* {console.log(restaurant)} */}
       <div className="restaurant-banner">
         <div className="restaurant-banner-left">
           <img
@@ -172,5 +161,3 @@ const RestaurantMenu = () => {
 }
 
 export default RestaurantMenu
-
-// https://www.swiggy.com/dapi/menu/v4/full?lat=28.50440286590411&lng=77.06517409533264&menuId=

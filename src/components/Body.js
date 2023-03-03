@@ -4,11 +4,9 @@ import { useState, useEffect } from 'react';
 import ShimmerUI from './ShimmerUI.js';
 import NoRestaurant from './NoRestaurant';
 import { Link } from 'react-router-dom';
+import { filterData } from '../utils/helper.js';
+import useInternetStatus from '../customHooks/useInternetStatus.js';
 
-
-function filterData(searchInput, restaurants) {
-  return restaurants.filter((restaurant) => restaurant?.data?.name?.toLowerCase().includes(searchInput.toLowerCase()));
-}
 
 const Body = () => {
 
@@ -28,11 +26,12 @@ const Body = () => {
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 
+  const isOnline = useInternetStatus();
+
+  if (!isOnline) return <h1>🔴 Offline, Please check your internet connection</h1>
+
   if (!allRestaurants) return null;
 
-  // if (filteredRestaurants?.length === 0) { return <NoRestaurant /> };
-
-  // return (allRestaurants.length === 0) ? <ShimmerUI /> : (filteredRestaurants?.length === 0) ? <NoRestaurant /> : (
   return (allRestaurants.length === 0) ? <ShimmerUI /> : (
     <div className='body'>
       <div className='search-container'>

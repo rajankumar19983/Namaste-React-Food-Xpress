@@ -24,8 +24,8 @@ class About extends Component {
         <h1>About Us Page</h1>
         <p>This is the Namaste React Live Course Chapter 07 - Finding The Path</p>
         {/* <Outlet /> */}
-        {/* <Profile name={"RajanClass"} /> */}
-        <ProfileFunctionalComponent />
+        <Profile name={"RajanClass"} />
+        {/* <ProfileFunctionalComponent /> */}
       </div>
     );
   }
