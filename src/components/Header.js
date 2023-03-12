@@ -1,9 +1,10 @@
 import logo from "../assets/img/food-xpress-logo.png";
 import { FiShoppingCart } from 'react-icons/fi';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Header.css"
-
+import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const title = (
   <Link to="/">
@@ -16,10 +17,16 @@ const Header = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const { user } = useContext(UserContext);
+
+  const cartItems = useSelector(store => store.cart.items);
+  console.log(cartItems);
+
   return (
     <div className="header">
       <div className="header-elements">
         {title}
+        <h3>{user.name}</h3>
         <div className="nav-items">
           <ul>
             <Link to="/" className="link">
@@ -31,8 +38,19 @@ const Header = () => {
             <Link to="/contact" className="link">
               <li key="nav-3">Contact</li>
             </Link>
-            <Link to="/" className="link">
-              <li key="nav-4" id="cart"><FiShoppingCart />Cart</li>
+            <Link to="/cart" className="link">
+              <li key="nav-4" id="cart">
+                <div className="cart-group">
+                  <div className="cart-item-count">
+                    {cartItems.length}
+                  </div>
+                  <FiShoppingCart />
+                </div>
+                Cart
+              </li>
+            </Link>
+            <Link to="/instamart" className="link">
+              <li key="nav-5" id="instamart">Instamart</li>
             </Link>
           </ul>
           {

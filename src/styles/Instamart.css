@@ -1,0 +1,22 @@
+.instamert-component {
+  margin: 85px 50px 50px;
+  padding-top: 20px;
+  min-height: 75vh;
+}
+
+.section {
+  border: 1px solid black;
+  padding: 4px;
+  margin: 4px;
+}
+
+.component-header {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 4px;
+  margin: 4px;
+}
+
+button {
+  cursor: pointer;
+}

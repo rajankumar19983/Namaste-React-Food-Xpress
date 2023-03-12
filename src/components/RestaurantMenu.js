@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { IMG_CDN_URL } from "../constants"
 import ShimmerUI from "./ShimmerUI.js"
 import "../styles/RestaurantMenu.css"
-import { AiFillStar } from "react-icons/Ai"
-import { CiDiscount1 } from "react-icons/Ci"
+import { AiFillStar } from "react-icons/ai"
+import { CiDiscount1 } from "react-icons/ci"
 import { TfiGift } from "react-icons/Tfi"
 import useRestaurant from "../customHooks/useRestaurant"
+import { addItem } from "../utils/cartSlice"
+import { useDispatch } from "react-redux"
+
 
 const RestaurantMenu = () => {
 
@@ -14,6 +16,12 @@ const RestaurantMenu = () => {
   const { resId } = useParams()
 
   const restaurant = useRestaurant(resId);
+
+  const dispatch = useDispatch();
+
+  const addFoodItem = (item) => {
+    dispatch(addItem(item));
+  }
 
   return !restaurant ? (
     <ShimmerUI />
@@ -134,7 +142,10 @@ const RestaurantMenu = () => {
                                     <p>{item?.description}</p>
                                   </div>
                                   <div className="menu-item-right">
-                                    <img src={IMG_CDN_URL + item?.cloudinaryImageId}></img>
+                                    {
+                                      item?.cloudinaryImageId && <img src={(IMG_CDN_URL + item?.cloudinaryImageId)}></img>
+                                    }
+                                    <button onClick={() => addFoodItem(item)}>Add +</button>
                                   </div>
                                 </div>
                               ))

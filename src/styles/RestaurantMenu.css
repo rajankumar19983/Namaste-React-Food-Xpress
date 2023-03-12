@@ -193,11 +193,36 @@
 
 .menu-item-details {
   display: flex;
-  gap: 20px;
+  /* gap: 20px; */
   justify-content: space-between;
   color: rgb(150, 150, 150);
+  align-items: center;
+}
+
+.menu-item-left {
+  width: 65%;
+}
+
+.menu-item-right {
+  width: 35%;
+}
+
+.menu-item-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
 }
 
 .menu-item-right img {
   width: 150px;
+}
+
+.menu-item-right button {
+  border: 1px solid rgb(150, 150, 150);
+  color: green;
+  font-weight: 600;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
 }

@@ -5,42 +5,27 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-// import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/ProfileClass";
 import ShimmerUI from "./components/ShimmerUI";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart";
 
-
-/*
-Header
-  -Logo (Title)
-  -Nav Items (Right Side)
-  -Cart
-Body
-  -Search Bar
-  -RestaurantList
-    -RestaurantCard
-      -Image
-      -Name
-      -Rating
-      -Cusines
-Footer
-  -links
-  -Copyright
-*/
 
 const About = lazy(() => import("./components/About"));
+const Instamart = lazy(() => import("./components/Instamart"));
 
 const AppLayout = () => {
   return (
-    <>
+    <Provider store={store}>
       <Header />
       {/* Outlet - Takes the children configuration */}
       <Outlet />
       <Footer />
-    </>
+    </Provider>
   );
 };
 
@@ -75,6 +60,18 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <RestaurantMenu />
+      },
+      {
+        path: "/cart",
+        element: <Cart />
+      },
+      {
+        path: "/instamart",
+        element: (
+          <Suspense>
+            <Instamart />
+          </Suspense>
+        )
       }
     ]
   }
